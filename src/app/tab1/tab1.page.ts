@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotificationServiceService } from '../services/notification-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  message;
+  constructor(private notificationService: NotificationServiceService) {}
+
+  sendMessage() {
+    console.log('Message binded is ' +  this.message);
+    this.notificationService.sendMessage(this.message);
+  }
 
 }

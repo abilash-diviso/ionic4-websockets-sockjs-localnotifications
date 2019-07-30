@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -12,7 +13,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private backgroundMode: BackgroundMode
   ) {
     this.initializeApp();
   }
@@ -21,6 +23,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.backgroundMode.enable();
     });
   }
 }

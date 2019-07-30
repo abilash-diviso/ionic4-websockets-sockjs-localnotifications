@@ -16,6 +16,14 @@
       <ion-card-content>
         <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
       </ion-card-content>
+      <ion-row>
+        <ion-item>
+            <ion-input [(ngModel)]="message"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="sendMessage()"></ion-button>
+        </ion-item>
+      </ion-row>
     </ion-card>
     <ion-list lines="none">
       <ion-list-header>
